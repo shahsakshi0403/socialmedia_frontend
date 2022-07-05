@@ -1,0 +1,35 @@
+<div class="container">
+    <mat-card style="background-color: rgb(227, 241, 249);margin-top: 10%;">
+
+        <div mat-dialog-content>
+            <form [formGroup]="editPostForm" (ngSubmit)="onUserSubmit()" style="background-color: rgb(227, 241, 249);">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>ID</mat-label>
+                    <input matInput formControlName="_id" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title">
+                    <mat-error *ngIf="editPostForm.invalid">Title Reqired & Numbers not allowed</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Content</mat-label>
+                    <input matInput formControlName="content">
+                    <mat-error *ngIf="editPostForm.invalid">Content Reqired & Length must be 4-30 characters.
+                    </mat-error>
+                </mat-form-field>
+
+                <button class="btn btn-dark" type="submit" [disabled]="!editPostForm.valid">Update</button>&nbsp;
+                <button mat-raised-button color="warn" type="button" (click)="onClose()">Cancel</button>
+                <!-- [mat-dialog-close]="data.title" -->
+                <br /><br />
+            </form>
+        </div>
+        <div mat-dialog-actions>
+
+        </div>
+    </mat-card>
+</div>

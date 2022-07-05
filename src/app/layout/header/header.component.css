@@ -1,0 +1,7 @@
+.row{
+    width:100.8%;
+    color:#FFF;
+    position: fixed;
+    top:0;
+    z-index : 100;
+}

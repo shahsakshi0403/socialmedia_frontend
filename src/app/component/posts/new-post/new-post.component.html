@@ -1,0 +1,33 @@
+<div class="container">
+    <mat-card style="background-color: rgb(227, 241, 249);margin-top: 7%;">
+        <div class="row">
+            <h1 style="background-color: black; color: aliceblue; text-align:center;padding: 1.5% 0px 1.5% 0px;">Create
+                Post</h1>
+            <form [formGroup]="newPostForm" (ngSubmit)="onPostSubmit()">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title">
+                    <mat-error *ngIf="newPostForm.invalid">Title Reqired & contains only alphabets.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Content</mat-label>
+                    <input matInput formControlName="content">
+                    <mat-error *ngIf="newPostForm.invalid">Content Reqired & Length must be 4-30 characters.</mat-error>
+                </mat-form-field>
+
+
+                <div>
+                    <button class="btn btn-dark" type="submit" [disabled]="!newPostForm.valid">
+                        Create
+                    </button>&nbsp;
+                    <button class="btn btn-danger" type="button" (click)="onCancel()">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </mat-card>
+</div>

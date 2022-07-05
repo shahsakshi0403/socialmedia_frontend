@@ -6,6 +6,11 @@ export const environment = {
   production: false
 };
 
+export const baseUserURL = 'http://localhost:3000/user/';
+export const basePostURL = 'http://localhost:3000/post/';
+export const loginExpiryTime = 86400000; //equivalent to 24hour ( 1hour = 3600000 miliseconds) so 24hour = 86400000
+export const jwtKey='SakShiMyNaMeIsShaH'
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
